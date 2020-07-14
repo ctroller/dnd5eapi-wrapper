@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group 'ch.trox'
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+def floggerVersion = '0.5.1'
+
+dependencies {
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+    implementation group: 'com.google.flogger', name: 'flogger', version: floggerVersion
+    implementation group: 'com.google.flogger', name: 'flogger-system-backend', version: floggerVersion
+    implementation group: 'com.google.guava', name: 'guava', version: '29.0-jre'
+    implementation group: 'com.konghq', name: 'unirest-java', version: '3.8.06'
+
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.6.2'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.11.1'
+}
+
+test {
+    useJUnitPlatform()
+}
